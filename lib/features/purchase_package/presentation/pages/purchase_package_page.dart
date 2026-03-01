@@ -3,9 +3,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_subscription_app/core/widgets/language_toggle_button.dart';
+import 'package:flutter_subscription_app/features/purchase_package/presentation/providers/package_state.dart';
 import 'package:flutter_subscription_app/features/purchase_package/presentation/providers/purchase_provider.dart';
+import 'package:flutter_subscription_app/features/purchase_package/presentation/providers/purchase_state.dart';
 import 'package:flutter_subscription_app/features/purchase_package/presentation/widgets/dialog_widget.dart';
+import 'package:flutter_subscription_app/core/widgets/empty_state.dart';
+import 'package:flutter_subscription_app/core/widgets/error_state.dart';
 import 'package:flutter_subscription_app/features/purchase_package/presentation/widgets/package_list.dart';
+import 'package:flutter_subscription_app/features/purchase_package/presentation/widgets/page_header.dart';
 import '../../../../core/theme/app_theme.dart';
 import '../../../../core/providers/locale_provider.dart';
 import '../../../../generated/l10n/app_localizations.dart';
@@ -65,7 +70,7 @@ class PurchasePackagePage extends ConsumerWidget {
           slivers: [
             // Header
             SliverToBoxAdapter(
-              child: _PageHeader(
+              child: PageHeader(
                 title: l10n.selectPackage,
                 subtitle: switch (state) {
                   PackagesLoaded(:final packages) => l10n.packageDescription(packages.length),
@@ -85,7 +90,7 @@ class PurchasePackagePage extends ConsumerWidget {
                     child: PackageList(width: screenWidth, children: List.generate(3, (_) => const PackageCardSkeleton()),),
                   ),
                 PackagesError(:final message) => SliverFillRemaining(
-                    child: _ErrorState(
+                    child: ErrorState(
                       message: message,
                       l10n: l10n,
                       onRetry: () =>
@@ -94,7 +99,7 @@ class PurchasePackagePage extends ConsumerWidget {
                   ),
                 PackagesLoaded(:final packages) when packages.isEmpty =>
                   SliverFillRemaining(
-                    child: _EmptyState(l10n: l10n),
+                    child: EmptyState(l10n: l10n),
                   ),
                 PackagesLoaded(:final packages) 
               
@@ -238,116 +243,8 @@ class PurchasePackagePage extends ConsumerWidget {
   }
 }
 
-// ─── Supporting Widgets ───────────────────────────────────────────────────────
 
-class _PageHeader extends StatelessWidget {
-  final String title;
-  final String subtitle;
 
-  const _PageHeader({required this.title, required this.subtitle});
 
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.fromLTRB(20, 16, 20, 8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-       
-          Text(title, style: Theme.of(context).textTheme.headlineLarge),
-          const SizedBox(height: 4),
-          Text(subtitle, style: Theme.of(context).textTheme.bodyMedium),
-        ],
-      ),
-    );
-  }
-}
 
-class _ErrorState extends StatelessWidget {
-  final String message;
-  final AppLocalizations l10n;
-  final VoidCallback onRetry;
-
-  const _ErrorState({
-    required this.message,
-    required this.l10n,
-    required this.onRetry,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 80,
-              height: 80,
-              decoration: BoxDecoration(
-                color: AppColors.error.withAlpha(30),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(Icons.error_outline,
-                  color: AppColors.error, size: 40),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              l10n.errorOccurred,
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              message,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            const SizedBox(height: 24),
-            ElevatedButton.icon(
-              onPressed: onRetry,
-              icon: const Icon(Icons.refresh),
-              label: Text(l10n.retry),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _EmptyState extends StatelessWidget {
-  final AppLocalizations l10n;
-  const _EmptyState({required this.l10n});
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 80,
-              height: 80,
-              decoration: BoxDecoration(
-                color: AppColors.primary.withAlpha(30),
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(Icons.inbox_outlined,
-                  color: AppColors.primary, size: 40),
-            ),
-            const SizedBox(height: 16),
-            Text(l10n.noPackagesAvailable,
-                style: Theme.of(context).textTheme.titleLarge),
-            const SizedBox(height: 8),
-            Text(l10n.noPackagesDescription,
-                style: Theme.of(context).textTheme.bodyMedium),
-          ],
-        ),
-      ),
-    );
-  }
-}
 

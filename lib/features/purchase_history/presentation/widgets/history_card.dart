@@ -170,7 +170,7 @@ class HistoryCard extends StatelessWidget {
     if (locale == 'th') {
       // Thai Buddhist calendar year
       final buddhistYear = date.year + 543;
-      final formatter = DateFormat('d MMMM', 'en');
+      // final formatter = DateFormat('d MMMM', 'en');
       final thaiMonths = [
         'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน',
         'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม',
@@ -229,11 +229,11 @@ class _StatusBadge extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
       decoration: BoxDecoration(
         color: isActive
-            ? AppColors.success.withOpacity(0.1)
+            ? AppColors.success.withAlpha(30)
             : Colors.grey.shade100,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: isActive ? AppColors.success.withOpacity(0.3) : Colors.grey.shade300,
+          color: isActive ? AppColors.success.withAlpha(70) : Colors.grey.shade300,
         ),
       ),
       child: Text(

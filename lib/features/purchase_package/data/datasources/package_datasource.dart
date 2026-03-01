@@ -1,4 +1,4 @@
-// lib/features/purchase_package/data/datasources/package_remote_datasource.dart
+import 'dart:math';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../core/network/dio_client.dart';
@@ -29,10 +29,17 @@ class PackageDataSourceImpl implements PackageDataSource {
   @override
   Future<bool> purchasePackage(String packageId) async {
     await Future.delayed(const Duration(seconds: 1));
+    // TODO:
     // Mock success — replace with:
     // final response = await dioClient.dio.post('/purchases', data: {'package_id': packageId});
     // return response.data['success'] == true;
-    return true;
+    final roll = Random().nextInt(100);
+    if (roll < 70) {
+      return true;
+    } else {
+      return false;
+    }
+   
   }
 
   static final _mockPackages = [

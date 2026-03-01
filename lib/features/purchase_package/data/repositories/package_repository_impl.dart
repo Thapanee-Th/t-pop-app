@@ -9,14 +9,14 @@ import '../../domain/repositories/package_repository.dart';
 import '../datasources/package_datasource.dart';
 
 class PackageRepositoryImpl implements PackageRepository {
-  final PackageDataSource remoteDataSource;
+  final PackageDataSource packageDataSource;
 
-  PackageRepositoryImpl(this.remoteDataSource);
+  PackageRepositoryImpl(this.packageDataSource);
 
   @override
   Future<Either<Failure, List<PackageEntity>>> getPackages() async {
     try {
-      final models = await remoteDataSource.getPackages();
+      final models = await packageDataSource.getPackages();
       return Right(models.map((m) => m.toEntity()).toList());
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message, statusCode: e.statusCode));
@@ -30,7 +30,7 @@ class PackageRepositoryImpl implements PackageRepository {
   @override
   Future<Either<Failure, bool>> purchasePackage(String packageId) async {
     try {
-      final result = await remoteDataSource.purchasePackage(packageId);
+      final result = await packageDataSource.purchasePackage(packageId);
       return Right(result);
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message, statusCode: e.statusCode));

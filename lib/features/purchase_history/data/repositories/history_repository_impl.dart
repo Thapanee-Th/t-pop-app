@@ -9,14 +9,14 @@ import '../../domain/repositories/history_repository.dart';
 import '../datasources/history_package_datasource.dart';
 
 class HistoryRepositoryImpl implements HistoryRepository {
-  final HistoryPackageDataSource remoteDataSource;
+  final HistoryPackageDataSource packageDataSource;
 
-  HistoryRepositoryImpl(this.remoteDataSource);
+  HistoryRepositoryImpl(this.packageDataSource);
 
   @override
   Future<Either<Failure, List<PurchaseHistoryEntity>>> getPurchaseHistory() async {
     try {
-      final models = await remoteDataSource.getPurchaseHistory();
+      final models = await packageDataSource.getPurchaseHistory();
       return Right(models.map((m) => m.toEntity()).toList());
     } on ServerException catch (e) {
       return Left(ServerFailure(message: e.message, statusCode: e.statusCode));

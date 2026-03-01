@@ -1,16 +1,24 @@
 # t_pop_app
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+### Running
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+# Staging
+flutter run --target lib/main_staging.dart
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Production
+flutter run --target lib/main_prod.dart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+this project are mock data
+package t-pop page are 
+70% success, 10% empty and 20% error
+
+purchase package are 70% success and 30% failure
+
+history page are 
+70% success, 10% empty and 20% error
+
+
+ 

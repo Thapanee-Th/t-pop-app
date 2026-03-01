@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_subscription_app/features/purchase_package/data/repositories/package_repository_impl.dart';
 import 'package:flutter_subscription_app/features/purchase_package/domain/usecases/purchase_package_usecase.dart';
-import 'package:flutter_subscription_app/features/purchase_package/presentation/providers/package_provider.dart';
+import 'package:flutter_subscription_app/features/purchase_package/presentation/providers/purchase_state.dart';
 
 class PurchaseNotifier extends Notifier<PurchaseState> {
   @override

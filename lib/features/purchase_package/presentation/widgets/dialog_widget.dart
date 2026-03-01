@@ -1,7 +1,6 @@
   import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_subscription_app/core/theme/app_theme.dart';
-import 'package:flutter_subscription_app/features/purchase_package/presentation/providers/package_provider.dart';
 import 'package:flutter_subscription_app/features/purchase_package/presentation/providers/purchase_provider.dart';
 import 'package:flutter_subscription_app/generated/l10n/app_localizations.dart';
 

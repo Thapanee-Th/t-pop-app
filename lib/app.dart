@@ -17,7 +17,7 @@ class App extends ConsumerWidget {
     final locale = ref.watch(localeProvider);
 
     return MaterialApp.router(
-      title: 'Subscription App',
+      title: 'T-pop App',
       debugShowCheckedModeBanner: appConfig.isStaging,
       theme: AppTheme.lightTheme,
       routerConfig: appRouter,

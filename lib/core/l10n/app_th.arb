@@ -1,0 +1,72 @@
+{
+  "@@locale": "th",
+  "appName": "T-POP",
+  "purchasePackage": "ซื้อแพ็กเกจ",
+  "purchaseHistory": "ประวัติการซื้อ",
+  "selectPackage": "แพ็กเกจ T-POP Premium",
+  "packageDescription": "แพ็กเกจ T-POP Premium คือแพ็กเกจสมาชิกแบบมีค่าใช้จ่าย โดยแบ่งเป็น {packageCount} แพ็กเกจ",
+  "perYear": "/ สัปดาห์",
+  "perMonth": "/ เดือน",
+  "perYear": "/ ปี",
+  "buyNow": "ซื้อเลย",
+  "mostPopular": "ยอดนิยม",
+  "bestValue": "คุ้มที่สุด",
+  "features": "สิ่งที่ได้รับ",
+  "loading": "กำลังโหลด...",
+  "errorOccurred": "เกิดข้อผิดพลาด",
+  "retry": "ลองใหม่",
+  "noPackagesAvailable": "ไม่มีแพ็กเกจ",
+  "noPackagesDescription": "กรุณาตรวจสอบในภายหลัง",
+  "purchaseSuccess": "ซื้อสำเร็จ!",
+  "purchaseSuccessDesc": "การสมัครสมาชิกของคุณเปิดใช้งานแล้ว",
+  "purchaseError": "ซื้อไม่สำเร็จ",
+  "close": "ปิด",
+  "currentPlan": "แผนปัจจุบัน",
+  "expiredPlan": "หมดอายุ",
+  "activeSubscriptions": "การสมัครที่ใช้งานอยู่",
+  "expiredSubscriptions": "การสมัครที่หมดอายุแล้ว",
+  "noHistory": "ไม่มีประวัติการซื้อ",
+  "noHistoryDescription": "คุณยังไม่เคยซื้อแพ็กเกจ",
+  "purchaseDate": "วันที่ซื้อ",
+  "expiryDate": "วันหมดอายุ",
+  "paymentMethod": "ช่องทางชำระเงิน",
+  "orderId": "รหัสคำสั่งซื้อ",
+  "amount": "จำนวนเงิน",
+  "status": "สถานะ",
+  "active": "ใช้งานอยู่",
+  "expired": "หมดอายุ",
+  "daysRemaining": "เหลืออีก {days} วัน",
+  "@daysRemaining": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "language": "ภาษา",
+  "thai": "ภาษาไทย",
+  "english": "English",
+  "confirmPurchase": "ยืนยันการซื้อ",
+  "confirmPurchaseDesc": "คุณต้องการซื้อ {packageName} ในราคา {price} ใช่หรือไม่?",
+  "@confirmPurchaseDesc": {
+    "placeholders": {
+      "packageName": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "cancel": "ยกเลิก",
+  "confirm": "ยืนยัน",
+  "creditCard": "บัตรเครดิต",
+  "applePay": "Apple Pay",
+  "googlePay": "Google Pay",
+  "promptPay": "พร้อมเพย์",
+  "unlimited": "ไม่จำกัด",
+  "gb": "GB",
+  "startDate": "วันที่เริ่มต้น",
+  "viewDetails": "ดูรายละเอียด",
+  "packageDetails": "รายละเอียดแพ็กเกจ"
+}

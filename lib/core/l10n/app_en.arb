@@ -1,0 +1,72 @@
+{
+  "@@locale": "en",
+  "appName": "T-POP",
+  "purchasePackage": "Purchase Package",
+  "purchaseHistory": "Purchase History",
+  "selectPackage": "Package T-POP Premium",
+  "packageDescription": "The T-POP Premium package is a paid subscription package, divided into {packageCount} packages.",
+  "perYear": "/ week",
+  "perMonth": "/ month",
+  "perYear": "/ year",
+  "buyNow": "Buy Now",
+  "mostPopular": "Most Popular",
+  "bestValue": "Best Value",
+  "features": "Features",
+  "loading": "Loading...",
+  "errorOccurred": "An error occurred",
+  "retry": "Retry",
+  "noPackagesAvailable": "No packages available",
+  "noPackagesDescription": "Please check back later",
+  "purchaseSuccess": "Purchase Successful!",
+  "purchaseSuccessDesc": "Your subscription is now active",
+  "purchaseError": "Purchase Fail!",
+  "close": "Close",
+  "currentPlan": "Current Plan",
+  "expiredPlan": "Expired",
+  "activeSubscriptions": "Active Subscriptions",
+  "expiredSubscriptions": "Expired Subscriptions",
+  "noHistory": "No Purchase History",
+  "noHistoryDescription": "You haven't made any purchases yet",
+  "purchaseDate": "Purchase Date",
+  "expiryDate": "Expiry Date",
+  "paymentMethod": "Payment Method",
+  "orderId": "Order ID",
+  "amount": "Amount",
+  "status": "Status",
+  "active": "Active",
+  "expired": "Expired",
+  "daysRemaining": "{days} days remaining",
+  "@daysRemaining": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "language": "Language",
+  "thai": "ภาษาไทย",
+  "english": "English",
+  "confirmPurchase": "Confirm Purchase",
+  "confirmPurchaseDesc": "Are you sure you want to purchase {packageName} for {price}?",
+  "@confirmPurchaseDesc": {
+    "placeholders": {
+      "packageName": {
+        "type": "String"
+      },
+      "price": {
+        "type": "String"
+      }
+    }
+  },
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "creditCard": "Credit Card",
+  "applePay": "Apple Pay",
+  "googlePay": "Google Pay",
+  "promptPay": "PromptPay",
+  "unlimited": "Unlimited",
+  "gb": "GB",
+  "startDate": "Start Date",
+  "viewDetails": "View Details",
+  "packageDetails": "Package Details"
+}
